@@ -18,60 +18,21 @@
 <body>
     <div id="app"></div>
     <script src="../assets/js/jquery.min.js"></script>
+    <script src="jquery.navslide.js"></script>
     <script>
-        var Navslide = function (element, options) {
-            this.default = {
-                data: [],
-                active: null
-            };
-            this.element = element;
-            this.settings = $.extend({}, this.default, options);
-            this.init();
-        }
-
-        //插件入口函数
-        Navslide.prototype.init = function () {
-            this.$nav = this.initNav();
-        }
-
-        //根据data渲染html
-        Navslide.prototype.initNav = function () {
-            var html = [],
-                datas = this.settings.data,
-                len = datas.length;
-            html.push('<ul class="nav-slide-wrapper">');
-            for (var i = 0; i < len; i++) {
-                html.push(
-                    '<li class="nav-slide-item',
-                        datas[i].isActive ? ' active':'',
-                    '">',
-                        datas[i].text,
-                    '</li>'
-                );
-            }
-            html.push('<i class="active-line"></i>');
-            html.push('</ul>');
-            return $(html.join('')).appendTo(this.element);
-        }
-
-        $.fn.navslide = function (options) {
-
-            return new Navslide(this, options);
-        }
-
         //调用
-
         $('#app').navslide({
             data: [
 
                 {
                     'text': '新闻',
-                    'value': 'xinwen',
-                    'isActive': true
+                    'value': 'xinwen'
                 },
                 {
                     'text': '社会趣闻',
-                    'value': 'shehuiquwen'
+                    'value': 'shehuiquwen',
+                    // 'isActive': true
+
                 },
                 {
                     'text': '视频',
