@@ -42,7 +42,13 @@
                     'text': '新农村',
                     'value': 'xinongcun'
                 }
-            ]
+            ],
+            onBeforeClick: function() {
+                console.log(this.$activeItem.html());
+            },
+            onClick: function() {
+                console.log(this.$activeItem.html());
+            }
         });
     </script>
 </body>
